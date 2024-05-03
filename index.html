@@ -20,40 +20,42 @@
   </style>
 </head>
 <body class="font-Roboto text-DarkSlateGrey bg-CharcoalGrey lg:place-content-center lg:h-screen">
-  <div class="w-375 lg:w-930 mx-auto text-center lg:flex lg:flex-row-reverse bg-White rounded-b-3xl pb-5 lg:rounded-3xl lg:p-6 lg:place-items-center" id="signup">
-    <div class="images basis-1/2 text-right">
-      <img src="./assets/images/illustration-sign-up-mobile.svg" alt="sign-up illustration" class="lg:hidden">
-      <img src="./assets/images/illustration-sign-up-desktop.svg" alt="sign-up illustration" class="hidden lg:inline" width="400px">
+  <main>
+    <div class="w-375 lg:w-930 mx-auto text-center lg:flex lg:flex-row-reverse bg-White rounded-b-3xl pb-5 lg:rounded-3xl lg:p-6 lg:place-items-center" id="signup">
+      <div class="images basis-1/2 text-right">
+        <img src="./assets/images/illustration-sign-up-mobile.svg" alt="sign-up illustration" class="lg:hidden">
+        <img src="./assets/images/illustration-sign-up-desktop.svg" alt="sign-up illustration" class="hidden lg:inline" width="400px">
+      </div>
+      <div class="px-5 text-left basis-1/2">
+        <h1 class="text-4xl font-bold text-left  py-8">Stay updated!</h1>
+        <p class="text-[18px] text-left">Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul class="pl-7 list-image-[url(./assets/images/icon-list.svg)]">
+          <li class="pl-2 py-2">Product discovery and building what matters</li>
+          <li class="pl-2 py-2">Measuring to ensure updates are a success</li>
+          <li class="pl-2 py-2">And much more!</li>
+        </ul>
+        <form id="newsletterForm" onsubmit="return validateForm()" class="text-left pt-10" novalidate>
+          <div class="flex flex-row">
+          <label for="email" class="text-sm font-bold basis-1/2">Email address</label>
+          <p class="text-sm font-bold text-Tomato text-right basis-1/2" id="invalid"></p><br></div>
+          <input type="email" id="email" name="email" placeholder="email@company.com" autocomplete="email" class="my-3 p-4 border rounded-xl border-Grey w-full text-lg  invalid:bg-Tomato/10 invalid:border-Tomato invalid:text-Tomato"><br>
+          <button type="submit" class="mt-5 p-5 text-White font-bold text-[18px] bg-DarkSlateGrey rounded-xl w-full hover:bg-gradient-to-br hover:from-Tomato hover:to-Orange hover:shadow-xl hover:shadow-Tomato/30">Subscribe to monthly newsletter</button>
+        </form>
+      </div>
     </div>
-    <div class="px-5 text-left basis-1/2">
-      <h1 class="text-4xl font-bold text-left  py-8">Stay updated!</h1>
-      <p class="text-[18px] text-left">Join 60,000+ product managers receiving monthly updates on:</p>
-      <ul class="pl-7 list-image-[url(./assets/images/icon-list.svg)]">
-        <li class="pl-2 py-2">Product discovery and building what matters</li>
-        <li class="pl-2 py-2">Measuring to ensure updates are a success</li>
-        <li class="pl-2 py-2">And much more!</li>
-      </ul>
-      <form id="newsletterForm" onsubmit="return validateForm()" class="text-left pt-10" novalidate>
-        <div class="flex flex-row">
-        <label for="email" class="text-sm font-bold basis-1/2">Email address</label>
-        <p class="text-sm font-bold text-Tomato text-right basis-1/2" id="invalid"></p><br></div>
-        <input type="email" id="email" name="email" placeholder="email@company.com" autocomplete="email" class="my-3 p-4 border rounded-xl border-Grey w-full text-lg  invalid:bg-Tomato/10 invalid:border-Tomato invalid:text-Tomato"><br>
-        <button type="submit" class="mt-5 p-5 text-White font-bold text-[18px] bg-DarkSlateGrey rounded-xl w-full hover:bg-gradient-to-br hover:from-Tomato hover:to-Orange hover:shadow-xl hover:shadow-Tomato/30">Subscribe to monthly newsletter</button>
-      </form>
+    <!-- Success message start -->
+    <div class="hidden w-375 mx-auto px-5 bg-White rounded-b-3xl py-5 lg:w-[500px] lg:rounded-3xl lg:px-16 lg:place-items-center" id="success">
+      <img src="./assets/images/icon-success.svg" alt="success icon" class="mt-36 lg:mt-10">
+      <h1 class="text-4xl font-bold py-10 lg:text-5xl">Thanks for subscribing!</h1>
+      <p>A confirmation email has been sent to <span class="font-bold">ash@loremcompany.com</span>. 
+      Please open it and click the button inside to confirm your subscription.</p>
+      <button id="dismiss" class="w-full bg-DarkSlateGrey text-White rounded-xl p-5 mt-[325px] lg:my-16 hover:bg-gradient-to-br hover:from-Tomato hover:to-Orange hover:shadow-xl hover:shadow-Tomato/30">Dismiss message</button>
     </div>
-  </div>
-  <!-- Success message start -->
-  <div class="hidden w-375 mx-auto px-5 bg-White rounded-b-3xl py-5 lg:w-[500px] lg:rounded-3xl lg:px-16 lg:place-items-center" id="success">
-    <img src="./assets/images/icon-success.svg" alt="success icon" class="mt-36 lg:mt-10">
-    <h1 class="text-4xl font-bold py-10 lg:text-5xl">Thanks for subscribing!</h1>
-    <p>A confirmation email has been sent to <span class="font-bold">ash@loremcompany.com</span>. 
-    Please open it and click the button inside to confirm your subscription.</p>
-    <button id="dismiss" class="w-full bg-DarkSlateGrey text-White rounded-xl p-5 mt-[325px] lg:my-16 hover:bg-gradient-to-br hover:from-Tomato hover:to-Orange hover:shadow-xl hover:shadow-Tomato/30">Dismiss message</button>
-  </div>
-  <div class="attribution pt-10">
+  </main>
+  <footer class="attribution pt-10">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Martin Hussey</a>.
-  </div>
+  </footer>
   <script src="./index.js"></script>
 </body>
 </html>
